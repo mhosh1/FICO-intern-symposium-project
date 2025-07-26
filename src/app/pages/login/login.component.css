@@ -1,0 +1,84 @@
+/* Full-page center background */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6f0fa;
+  }
+  
+  /* Card box */
+  .login-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .logo {
+    width: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .avatar-icon {
+    margin-bottom: 1.5rem;
+    color: #003366;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .forgot-link {
+    display: block;
+    text-align: right;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  .login-button {
+    width: 100%;
+    background-color: #0a0f16;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .extras {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
