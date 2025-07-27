@@ -1,0 +1,111 @@
+<!-- login.component.html -->
+<div class="login-container">
+    <div class="login-card">
+      <div class="fico-header">
+        <h2>Sign In</h2>
+   <img src="assets\images\profilecomponent.jpg"    alt="Profile Image" style="width: 100px; height: 100px; border-radius: 50%;" />
+   <img src="assets\images\ficoImage.png" alt="Logo" class="top-left-logo">
+
+
+
+      </div>
+  
+      <!-- Success Message -->
+      <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+      </div>
+  
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-error">
+        {{ errorMessage }}
+      </div>
+  
+      <!-- Form Error (for password mismatch) -->
+      <div *ngIf="getFormError()" class="alert alert-error">
+        {{ getFormError() }}
+      </div>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <!-- Personal Information -->
+        <div class="form-section">
+          
+       <div class="form-row">
+  <div class="form-group">
+    <input
+      id="username"
+      type="text"
+      formControlName="username"
+      placeholder="Username *"
+      class="form-control"
+      [class.error]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+    />
+    <div class="error-message" *ngIf="getFieldError('username')">
+      {{ getFieldError('username') }}
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Password *"
+      class="form-control"
+      [class.error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+    />
+    <div class="error-message" *ngIf="getFieldError('password')">
+      {{ getFieldError('password') }}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
+          <div class="form-group">
+            <label for="email">Forgot Password <span class="required">*</span></label>
+          </div>
+        </div>
+  
+        
+  
+        <!-- Terms and Conditions -->
+        <div class="form-section">
+          <div class="checkbox-group">
+            <input 
+              id="agreeToTerms" 
+              type="checkbox" 
+              formControlName="agreeToTerms"
+              class="checkbox">
+            <label for="agreeToTerms" class="checkbox-label">
+              I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> <span class="required">*</span>
+            </label>
+          </div>
+          <div class="error-message" *ngIf="loginForm.get('agreeToTerms')?.invalid && loginForm.get('agreeToTerms')?.touched">
+            You must agree to the terms and conditions.
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="loginForm.invalid || isLoading">
+            <span *ngIf="isLoading" class="loading-spinner"></span>
+            {{ isLoading ? 'LOGGIN...' : 'LOGIN' }}
+          </button>
+        </div>
+      </form>
+  
+      <!-- Login Link -->
+      <div class="login-link">
+        <p>unlock Account? <a routerLink="/login">Sign in here</a></p>
+      </div>
+    </div>
+  </div>

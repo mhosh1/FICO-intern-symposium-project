@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -15,8 +17,11 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     AppComponent,      // Import standalone components here
     SignupComponent    // Import standalone components here
+    ,LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

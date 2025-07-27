@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SignupComponent, CommonModule], // Import your components here
+  imports: [SignupComponent,LoginComponent,CommonModule], // Import your components here
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
