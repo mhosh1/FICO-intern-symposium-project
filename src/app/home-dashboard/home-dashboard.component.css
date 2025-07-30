@@ -3,5 +3,35 @@
     background-color: #f3f7fd;
     font-family: 'Helvetica Neue', sans-serif;
 }
+
+.product-card{
+  max-width: 150px;
+}
+
+mat-card:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+mat-card{
+  transition: transform .2s;
+}
+
+.sort-dropdown{
+  margin-left: 20px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+
   
   

@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 
+
 @Component({
   standalone: true,
   selector: 'app-home-dashboard',
@@ -39,10 +40,45 @@ export class HomeDashboardComponent implements OnInit{
 
   stories = [
     {
-      image: 'story1.jpg',
+      image: 'Product_01.jpg',
       createdBy: 'Ana Stoneberg',
       reviewedBy: 'Jeff Service'
     },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service'
+    }
     // Duplicate or more dummy data
   ];
 
