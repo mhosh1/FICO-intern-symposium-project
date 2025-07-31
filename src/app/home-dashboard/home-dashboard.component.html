@@ -1,22 +1,25 @@
+
 <div class="container">
-    <div class="header">
-      <img src="assets/bill_depth_mm.png" alt="FICO Logo" class="logo" />
+  <div class="header">
+    <img src="assets/bill_depth_mm.png" alt="FICO Logo" class="logo" />
+    <div class="user-info">
       <img src="assets/images/Product_01.jpg" alt="User" class="avatar" />
+      <div>
+        <h1>Welcome {{ user.name }}</h1>
+        <p>{{ user.role }} on the {{ user.team }} team</p>
+      </div>
     </div>
-  
-    <h1>Welcome {{ user.name }}</h1>
-    <p>{{ user.role }} on the {{ user.team }} team</p>
+  </div>
 
-
-
-
-  
+  <div class="filters">
     <mat-form-field appearance="outline">
       <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team">
-        <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
+        <mat-option *ngFor="let team of teams" [value]="team">
+          {{ team }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
-  
+
     <mat-form-field appearance="outline" class="search-field">
       <input
         matInput
@@ -25,27 +28,23 @@
         (keyup)="filterStories()"
       />
     </mat-form-field>
-  
-    <h2>Recommended Stories</h2>
-  
-
-
-    <div class="grid-container" fxLayout="row wrap" fxLayoutGap="50px grid">
-      <div *ngFor="let story of stories">
-        <mat-card class="product-card">
-        
-            <img mat-card-image src="assets/images/{{story.image}}">
-
-            <mat-card-content>
-              <p>
-                <mat-card-title>{{story.createdBy }}</mat-card-title>
-              <mat-card-subtitle>{{story.reviewedBy}}</mat-card-subtitle>
-              </p>
-            </mat-card-content>
-          </mat-card>
-    
-      </div>
-    </div>
   </div>
-  
+
+  <h2>Recommended Stories</h2>
+
+  <div class="grid-container" fxLayout="row wrap" fxLayoutGap="32px">
+    <mat-card class="product-card" *ngFor="let story of stories">
+      <img
+        mat-card-image
+        [src]="'assets/images/' + story.image"
+        alt="Story Image"
+        class="story-image"
+      />
+      <mat-card-content>
+        <mat-card-title>{{ story.createdBy }}</mat-card-title>
+        <mat-card-subtitle>Reviewed by {{ story.reviewedBy }}</mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
 
