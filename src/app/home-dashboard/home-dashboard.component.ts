@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { BottomNavComponent } from '../bottom-nav/bottom-nav.component';
 
 
 @Component({
@@ -20,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatOptionModule,
     MatCardModule,
-    FormsModule],
+    FormsModule,
+    BottomNavComponent],
   templateUrl: './home-dashboard.component.html',
   styleUrls: ['./home-dashboard.component.css']
 
