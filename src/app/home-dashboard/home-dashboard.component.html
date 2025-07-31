@@ -33,7 +33,7 @@
   <h2>Recommended Stories</h2>
 
   <div class="grid-container" fxLayout="row wrap" fxLayoutGap="32px">
-    <mat-card class="product-card" *ngFor="let story of stories">
+    <mat-card class="product-card" *ngFor="let story of filteredStories">
       <img
         mat-card-image
         [src]="'assets/images/' + story.image"

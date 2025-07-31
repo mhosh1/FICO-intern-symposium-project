@@ -78,7 +78,7 @@ export class HomeDashboardComponent implements OnInit{
     },
     {
       image: 'Product_01.jpg',
-      createdBy: 'Ana Stoneberg',
+      createdBy: 'Ana Steinberg',
       reviewedBy: 'Jeff Service'
     }
     // Duplicate or more dummy data
