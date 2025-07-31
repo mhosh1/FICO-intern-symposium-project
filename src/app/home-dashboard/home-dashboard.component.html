@@ -13,10 +13,11 @@
 
   <div class="filters">
     <mat-form-field appearance="outline">
-      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team">
-        <mat-option *ngFor="let team of teams" [value]="team">
+      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team" (selectionChange)="filterStories()">
+        <!-- <mat-option *ngFor="let team of teams" [value]="team">
           {{ team }}
-        </mat-option>
+        </mat-option> -->
+        <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
       </mat-select>
     </mat-form-field>
 

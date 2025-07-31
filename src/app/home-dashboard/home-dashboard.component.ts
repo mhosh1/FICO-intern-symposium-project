@@ -43,43 +43,51 @@ export class HomeDashboardComponent implements OnInit{
   stories = [
     {
       image: 'Product_01.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      createdBy: 'Arin Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Brian Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Mohamed Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
     },
     {
       image: 'Product_01.jpg',
       createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
     },
     {
       image: 'Product_01.jpg',
       createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
     },
     {
       image: 'Product_01.jpg',
       createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
     },
     {
       image: 'Product_01.jpg',
       createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
-    },
-    {
-      image: 'Product_01.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
-    },
-    {
-      image: 'Product_01.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      reviewedBy: 'Jeff Service',
+      team: 'Event Management'
     },
     {
       image: 'Product_01.jpg',
       createdBy: 'Ana Steinberg',
-      reviewedBy: 'Jeff Service'
+      reviewedBy: 'Jeff Service',
+      team: 'Cybersecurity'
     }
     // Duplicate or more dummy data
   ];
@@ -93,8 +101,12 @@ export class HomeDashboardComponent implements OnInit{
 
   filterStories(): void {
     const term = this.searchTopic.toLowerCase();
+    const team = this.selectedTeam;
     this.filteredStories = this.stories.filter(story =>
-      story.createdBy.toLowerCase().includes(term)
+      //story.createdBy.toLowerCase().includes(term)
+      (!term || story.createdBy.toLowerCase().includes(term)) &&
+      //(!team || this.user.team === team)
+      (!team || story.team === team)
     );
   }
 }
