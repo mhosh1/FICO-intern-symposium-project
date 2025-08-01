@@ -1,7 +1,74 @@
-.container {
-    padding: 16px;
-    background-color: #f3f7fd;
-    font-family: 'Helvetica Neue', sans-serif;
-}
+
+   .container {
+    padding: 4rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0072ce;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  mat-form-field {
+    min-width: 200px;
+    flex: 1;
+  }
+  
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 1rem;
+  }
+  
+  .product-card {
+    width: 300px;
+    background-color: #f5faff;
+    border: 1px solid #d0e6f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 114, 206, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 114, 206, 0.2);
+  }
+  
+  .story-image {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+
+
   
   

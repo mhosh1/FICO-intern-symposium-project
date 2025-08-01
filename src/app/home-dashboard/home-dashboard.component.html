@@ -1,32 +1,27 @@
- <div class="container">
-    <div class="header">
-      <img src="assets/logo.png" alt="FICO Logo" class="logo" />
-      <img src="assets/user-avatar.jpg" alt="User" class="avatar" />
+
+
+<div class="container">
+  <div class="header">
+    <img src="assets/bill_depth_mm.png" alt="FICO Logo" class="logo" />
+    <div class="user-info">
+      <img src="assets/images/Product_01.jpg" alt="User" class="avatar" />
+      <div>
+        <h1>Welcome {{ user.name }}</h1>
+        <p>{{ user.role }} on the {{ user.team }} team</p>
+      </div>
     </div>
-  
-    <h1>Welcome {{ user.name }}</h1>
-    <p>{{ user.role }} on the {{ user.team }} team</p>
+  </div>
 
-    <mat-form-field>
-        <input matInput placeholder="Search">
-      </mat-form-field>
-    <mat-form-field>
-        <mat-select placeholder="Sort">
-          <mat-option>Price: Low to High</mat-option>
-          <mat-option>Price: High to Low</mat-option>
-        </mat-select>
-    </mat-form-field>
-
-
-
-
-  
+  <div class="filters">
     <mat-form-field appearance="outline">
-      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team">
+      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team" (selectionChange)="filterStories()">
+        <!-- <mat-option *ngFor="let team of teams" [value]="team">
+          {{ team }}
+        </mat-option> -->
         <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
       </mat-select>
     </mat-form-field>
-  
+
     <mat-form-field appearance="outline" class="search-field">
       <input
         matInput
@@ -35,21 +30,28 @@
         (keyup)="filterStories()"
       />
     </mat-form-field>
-  
-    <h2>Recommended Stories</h2>
-  
-    <div class="story-grid" fxLayout="row wrap" fxLayoutGap="20px">
-      <mat-card class="story-card" *ngFor="let story of filteredStories">
-        <img mat-card-image [src]="'assets/images/' + story.image" alt="Story image" />
-        <mat-card-content>
-          <p>
-            <strong>Created by:</strong> {{ story.createdBy }}<br />
-            <strong>Reviewed by:</strong> {{ story.reviewedBy }}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
   </div>
-   
 
-   <p>testing</p>
+  <h2>Recommended Stories</h2>
+
+  <div class="grid-container" fxLayout="row wrap" fxLayoutGap="32px">
+    <mat-card class="product-card" *ngFor="let story of filteredStories">
+      <img
+        mat-card-image
+        [src]="'assets/images/' + story.image"
+        alt="Story Image"
+        class="story-image"
+      />
+      <mat-card-content>
+        <mat-card-title>{{ story.createdBy }}</mat-card-title>
+        <mat-card-subtitle>Reviewed by {{ story.reviewedBy }}</mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<app-bottom-nav></app-bottom-nav>
+
+
+

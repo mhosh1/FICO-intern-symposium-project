@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { BottomNavComponent } from '../bottom-nav/bottom-nav.component';
+
 
 @Component({
   standalone: true,
@@ -19,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatOptionModule,
     MatCardModule,
-    FormsModule],
+    FormsModule,
+    BottomNavComponent],
   templateUrl: './home-dashboard.component.html',
   styleUrls: ['./home-dashboard.component.css']
 
@@ -39,10 +42,53 @@ export class HomeDashboardComponent implements OnInit{
 
   stories = [
     {
-      image: 'story1.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service'
+      image: 'Product_01.jpg',
+      createdBy: 'Arin Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
     },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Brian Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Mohamed Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Shell'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Stoneberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Event Management'
+    },
+    {
+      image: 'Product_01.jpg',
+      createdBy: 'Ana Steinberg',
+      reviewedBy: 'Jeff Service',
+      team: 'Cybersecurity'
+    }
     // Duplicate or more dummy data
   ];
 
@@ -55,8 +101,12 @@ export class HomeDashboardComponent implements OnInit{
 
   filterStories(): void {
     const term = this.searchTopic.toLowerCase();
+    const team = this.selectedTeam;
     this.filteredStories = this.stories.filter(story =>
-      story.createdBy.toLowerCase().includes(term)
+      //story.createdBy.toLowerCase().includes(term)
+      (!term || story.createdBy.toLowerCase().includes(term)) &&
+      //(!team || this.user.team === team)
+      (!team || story.team === team)
     );
   }
 }
