@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
-
+import { LoginComponent } from './login/login.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+      HttpClientModule,
     AppComponent,      // Import standalone components here
     SignupComponent    // Import standalone components here
     ,LoginComponent
@@ -23,5 +24,3 @@ import { LoginComponent } from './login/login.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
