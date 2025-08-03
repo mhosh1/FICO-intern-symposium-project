@@ -18,5 +18,16 @@
     "team": "Cybersecurity",
     "role": "Product Management Intern",
     "agreeToTerms": true
+  },
+  {
+    "firstName": "king",
+    "lastName": "kobe",
+    "email": "aaaaa@gamil.com",
+    "username": "SadaAbdu",
+    "password": "Bike123#",
+    "confirmPassword": "Bike123#",
+    "team": "Cybersecurity",
+    "role": "Data Science Intern",
+    "agreeToTerms": true
   }
 ]
