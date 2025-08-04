@@ -48,43 +48,43 @@ export class HomeDashboardComponent implements OnInit{
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_02.jpg',
       createdBy: 'Brian Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_03.jpg',
       createdBy: 'Mohamed Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_04.jpg',
       createdBy: 'Ana Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_05.jpg',
       createdBy: 'Ana Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_06.jpg',
       createdBy: 'Ana Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Shell'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_07.jpg',
       createdBy: 'Ana Stoneberg',
       reviewedBy: 'Jeff Service',
       team: 'Event Management'
     },
     {
-      image: 'Product_01.jpg',
+      image: 'Product_08.jpg',
       createdBy: 'Ana Steinberg',
       reviewedBy: 'Jeff Service',
       team: 'Cybersecurity'
