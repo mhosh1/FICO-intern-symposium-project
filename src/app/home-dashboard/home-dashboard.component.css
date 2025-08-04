@@ -1,74 +1,136 @@
+/* Overall layout */
+.container {
+  padding: 4rem 6rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f9fbfc;
+}
 
-   .container {
-    padding: 4rem;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
+/* Header with logo and user info */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 1.5rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0072ce;
+}
+
+/* Welcome section */
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.welcome-text h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  font-weight: 600;
+  color: #003f6b;
+}
+
+.welcome-text p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #666;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+mat-form-field {
+  min-width: 240px;
+  flex: 1;
+}
+
+/* Grid section */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+
+/* Cards */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #d0e6f8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 114, 206, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 114, 206, 0.15);
+}
+
+.story-image {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Section headers */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #003f6b;
+}
+
+/* Media Queries for spacing on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
   }
-  
+
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  
-  .logo {
-    height: 60px;
-  }
-  
+
   .user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
-  
-  .avatar {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #0072ce;
+
+  .welcome-text {
+    text-align: left;
   }
-  
+
   .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
   }
-  
-  mat-form-field {
-    min-width: 200px;
-    flex: 1;
-  }
-  
-  .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    margin-top: 1rem;
-  }
-  
+
   .product-card {
-    width: 300px;
-    background-color: #f5faff;
-    border: 1px solid #d0e6f8;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 114, 206, 0.1);
-    transition: transform 0.2s;
+    width: 100%;
   }
-  
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 114, 206, 0.2);
-  }
-  
-  .story-image {
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-  }
-
-
-  
-  
+}
