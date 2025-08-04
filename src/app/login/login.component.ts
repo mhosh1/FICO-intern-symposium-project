@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModul
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // <-- Add this
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -41,7 +41,7 @@ export class LoginComponent {
     'Other'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     // Create the form in constructor
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
@@ -75,7 +75,37 @@ export class LoginComponent {
 
     if (this.loginForm.valid) {
       this.isLoading = true;
-      
+      const loginData = {
+        username: this.loginForm.value.username,
+        password: this.loginForm.value.password,
+      };
+      // Send login data to the backend
+      this.http.post('http://localhost:3000/login', loginData).subscribe(
+        (response: any) => {
+          this.isLoading = false;
+          this.successMessage = 'Login successful!';
+          console.log('Response:', response);
+        },
+        (error: any) => {
+          this.isLoading = false;
+          this.errorMessage = error.error?.error || 'Login failed. Please try again.';
+          console.error('Error:', error);
+        }
+      );
+      // // Send login data to the backend
+      // this.http.post('http://localhost:3000/login', loginData).subscribe(
+      //   (response: any) => {
+      //     this.isLoading = false;
+      //     this.successMessage = 'Login successful!';
+      //     console.log('Response:', response);
+
+      //   },
+      //   (error: any) => {
+      //     this.isLoading = false;
+      //     this.errorMessage = error.error?.error || 'Login failed. Please try again.';
+      //     console.error('Error:', error);
+      //   }
+      // );
       // MOCK SUBMISSION - just for testing the UI
       setTimeout(() => {
         this.isLoading = false;
