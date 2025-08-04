@@ -2,11 +2,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router'; // <-- Add this
+import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule], // Add these imports for standalone
+  imports:  [CommonModule, ReactiveFormsModule, RouterModule], // Add these imports for standalone
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -42,16 +44,11 @@ export class LoginComponent {
   constructor(private fb: FormBuilder) {
     // Create the form in constructor
     this.loginForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
-      confirmPassword: ['', Validators.required],
-      team: ['', Validators.required],
-      role: ['', Validators.required],
+     
       agreeToTerms: [false, Validators.requiredTrue]
-    }, { validators: this.passwordMatchValidator });
+    });
   }
 
   // Custom password validator
@@ -71,16 +68,6 @@ export class LoginComponent {
     return null;
   }
 
-  // Custom validator to check if passwords match
-  passwordMatchValidator(form: AbstractControl): { [key: string]: any } | null {
-    const password = form.get('password');
-    const confirmPassword = form.get('confirmPassword');
-    
-    if (password && confirmPassword && password.value !== confirmPassword.value) {
-      return { 'passwordMismatch': true };
-    }
-    return null;
-  }
 
   onSubmit(): void {
     this.errorMessage = '';

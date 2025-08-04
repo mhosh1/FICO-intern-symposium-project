@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router'; // <-- Add this
 import { UserService } from './user.service'; // Adjust path as needed
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; // Only needed if you use http in component
 @Component({
  selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+   imports: [CommonModule, ReactiveFormsModule, RouterModule], // <-- Include RouterModule,
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
