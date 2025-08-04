@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="header">
+    <img src="assets/bill_depth_mm.png" alt="Logo" class="logo" />
+    <img src="assets/images/Product_01.jpg" alt="User" class="avatar" />
+  </div>
+  
+  <div class="story-form">
+    <p>Story Title</p>
+    <input type="text" placeholder="Enter Title" />
+  </div>
+
+  <div class="select-team">
+    <mat-form-field appearance="outline">
+      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team">
+        <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class = "your-story">
+    <p>Your Story</p>
+    <textarea placeholder="Enter your story here..."></textarea>
+  </div>
+  
+  <div class="cover-photo">
+    <p>Cover Photo</p>
+    <label for="coverUpload" class="upload-button">
+      Choose file
+    </label>
+    <input
+      type="file"
+      id="coverUpload"
+      accept="image/*"
+      (change)="onCoverPhotoSelected($event)"
+    />
+  </div>
+
+  <button class="submit-button">Submit</button>
+
+</div>
+  
