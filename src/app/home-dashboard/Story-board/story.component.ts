@@ -9,11 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent {
-  @Input() title: string = 'What is Lorem Ipsum?';
-  @Input() author: string = 'By classic_books';
-  @Input() content: string = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            It has survived rnot odddddddnly five centuries, but also the leap into electronic typesetting.`;
-
+  @Input() title: string = 'What is Kubernetes?';
+  @Input() author: string = 'By Mohammad Hosh';
+  @Input() content: string = `Kubernetes is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. It provides a robust framework for orchestrating workloads across a cluster of machines, ensuring high availability and efficient resource utilization. By abstracting underlying infrastructure, Kubernetes simplifies the complexities of managing modern, distributed applications in various environments, including on-premises, public cloud, and hybrid setups.`;
+  @Input() contentImageUrl?: string="assets/images/Kubernetes.png"; 
 
   likeCount = 0;
   isLiked = false;

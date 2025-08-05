@@ -3,10 +3,17 @@
         <h3 class="post-title">{{ title }}</h3>
         <p class="post-author">{{ author }}</p>
     </div>
-    
+      <img src="assets/images/Fico_image.png"  class="top-left-logo">
+     
     <div class="post">
         <div class="post-content">
             <p>{{ content }}</p>
+         <!-- Optional content image -->
+            <img *ngIf="contentImageUrl" 
+                 [src]="contentImageUrl" 
+                 class="content-image"
+                 alt="Story Image">
+            
         </div>
     </div>
     

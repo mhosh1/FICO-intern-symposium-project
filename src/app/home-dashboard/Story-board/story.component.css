@@ -53,11 +53,20 @@
   max-width: 700px;
   margin: 0 auto;
 }
+.top-left-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px; /* adjust as needed */
+  height: auto;
+  z-index: 1000; /* stays above other elements */
+}
+
 
 .like-button {
   background: none;
   border: 1px solid #ddd;
-  color: #666;
+  color: #cf4343;
   font-size: 16px;
   cursor: pointer;
   padding: 6px 12px;
@@ -83,9 +92,14 @@
 .date-added span {
   font-weight: 500;
 }
-
+ .content-image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
 .navbar {
-  background-color: #2f2f4b;
+  background-color:  #0a6de6;
   display: flex;
   justify-content: space-around;
   padding: 15px 0;
