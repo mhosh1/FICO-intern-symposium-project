@@ -7,20 +7,17 @@ nav {
   z-index: 1000;
 }
 
-/* Style the Material Icons */
 mat-icon {
   display: block;
   margin: 0 auto 4px auto;
   color: inherit;
 }
 
-/* Hover effects */
 a:hover {
   color: #ffffff !important;
   opacity: 0.8;
 }
 
-/* Active state styling */
 a.active {
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.1);
