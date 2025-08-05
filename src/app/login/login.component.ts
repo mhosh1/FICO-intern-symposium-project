@@ -2,13 +2,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; // <-- Add this
+import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports:  [CommonModule, ReactiveFormsModule, RouterModule], // Add these imports for standalone
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -41,12 +42,11 @@ export class LoginComponent {
     'Other'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     // Create the form in constructor
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(8), this.passwordValidator]],
-     
       agreeToTerms: [false, Validators.requiredTrue]
     });
   }
@@ -68,7 +68,6 @@ export class LoginComponent {
     return null;
   }
 
-
   onSubmit(): void {
     this.errorMessage = '';
     this.successMessage = '';
@@ -76,11 +75,16 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.isLoading = true;
       
-      // MOCK SUBMISSION - just for testing the UI
+      // MOCK SUBMISSION - simulate signing in process
       setTimeout(() => {
         this.isLoading = false;
-        this.successMessage = 'Account created successfully! (This is just a test)';
-        console.log('Form data:', this.loginForm.value);
+        this.successMessage = 'Signing in successfully! Redirecting...';
+        console.log('Login data:', this.loginForm.value);
+        
+        // Navigate to blank page after successful login
+        setTimeout(() => {
+          this.router.navigate(['/blank']);
+        }, 1500);
       }, 2000);
       
     } else {
