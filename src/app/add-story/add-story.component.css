@@ -1,12 +1,10 @@
 .container {
-  background-color: #dceaf6;
-  padding: 40px;
+  background-color: #d1e0ee;
+  padding: 100px;
   max-width: 800px;
-  margin: 40px auto;
+  margin: auto;
   font-family: Arial, sans-serif;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px black;
-}
+} 
 
 .header {
   display: flex;
@@ -43,6 +41,7 @@
   border-radius: 8px;
   outline: none;
   background: white;
+  box-sizing: border-box;
 }
 
 .select-team {
@@ -64,7 +63,6 @@
 .your-story textarea {
   width: 100%;
   height: 200px;
-  padding: 14px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
