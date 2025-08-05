@@ -1,0 +1,60 @@
+
+<div class="container">
+  <div class="header">
+    <img src="assets/ficodiarieslogo.png" alt="FICO Logo" class="logo" />
+    <div class="user-info">
+      
+      <div class="user-info">
+        <div class="welcome-text">
+          <h1>Welcome {{ user.name }}</h1>
+          <p>{{ user.role }} on the {{ user.team }} team</p>
+        </div>
+        
+      </div>
+      <img src="assets/images/Product_01.jpg" alt="User" class="avatar" />
+    </div>
+  </div>
+
+  <div class="filters">
+    <mat-form-field appearance="outline">
+      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team" (selectionChange)="filterStories()">
+        <!-- <mat-option *ngFor="let team of teams" [value]="team">
+          {{ team }}
+        </mat-option> -->
+        <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="search-field">
+      <input
+        matInput
+        placeholder="Search Topic"
+        [(ngModel)]="searchTopic"
+        (keyup)="filterStories()"
+      />
+    </mat-form-field>
+  </div>
+
+  <h2>Recommended Stories</h2>
+
+  <div class="grid-container" fxLayout="row wrap" fxLayoutGap="32px">
+    <mat-card class="product-card" *ngFor="let story of filteredStories">
+      <img
+        mat-card-image
+        [src]="'assets/images/' + story.image"
+        alt="Story Image"
+        class="story-image"
+      />
+      <mat-card-content>
+        <mat-card-title>{{ story.createdBy }}</mat-card-title>
+        <mat-card-subtitle>Reviewed by {{ story.reviewedBy }}</mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<app-bottom-nav></app-bottom-nav>
+
+
+

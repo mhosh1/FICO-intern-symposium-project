@@ -1,0 +1,26 @@
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #333;
+  background-color: #0a6de6;
+  z-index: 1000;
+}
+
+mat-icon {
+  display: block;
+  margin: 0 auto 4px auto;
+  color: inherit;
+}
+
+a:hover {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+a.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+  
