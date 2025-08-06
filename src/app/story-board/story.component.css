@@ -56,6 +56,13 @@
   margin-bottom: 2.5rem; /* Increased from 2rem to 2.5rem */
 }
 
+.story-content {
+  white-space: normal;
+  overflow-wrap: break-word; 
+  word-break: break-word;
+  max-width: 100%;
+}
+
 .content-image {
   width: 100%;
   max-width: 900px; /* Increased from 700px to 900px */

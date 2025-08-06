@@ -49,7 +49,7 @@ export class AddStoryComponent implements OnInit{
   selectedTeam = '';
   searchTopic = '';
   teams = ['Shell', 'Cybersecurity', 'Event Management', 'Analytic Science'];
-  storyContent = '';
+  storyContent: string = '';
   storyTitle = '';
 
   ngOnInit(): void {

@@ -60,6 +60,8 @@ export class StoryComponent implements OnInit {
       if (params['team']) {
         this.team = params['team'];
       }
+      this.content = this.content.replace(/<[^>]+>/g, '');
+
     });
   }
 
