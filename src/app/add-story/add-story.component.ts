@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { BottomNavComponent } from "../bottom-nav/bottom-nav.component";
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @Component({
@@ -22,7 +23,8 @@ import { BottomNavComponent } from "../bottom-nav/bottom-nav.component";
     MatOptionModule,
     MatCardModule,
     FormsModule,
-    BottomNavComponent
+    BottomNavComponent,
+    EditorModule
 ],
   templateUrl: './add-story.component.html',
   styleUrls: ['./add-story.component.css']
@@ -38,6 +40,8 @@ export class AddStoryComponent implements OnInit{
   selectedTeam = '';
   searchTopic = '';
   teams = ['Shell', 'Cybersecurity', 'Event Management', 'Analytic Science'];
+  storyContent: string = '';
+
 
 
 
@@ -61,6 +65,14 @@ export class AddStoryComponent implements OnInit{
       reader.readAsDataURL(file);
     }
   }
+
+  yourImageUploadHandler = (blobInfo: any, success: (url: string) => void, failure: (err: string) => void) => {
+    const base64 = blobInfo.base64();
+    const url = 'data:' + blobInfo.blob().type + ';base64,' + base64;
+    success(url); // shows image inline
+  };
+  
+  
 
 
 }

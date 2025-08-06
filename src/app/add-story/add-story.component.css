@@ -7,6 +7,7 @@
   color: #333;
   background-color: #f9fbfc;
   border-radius: 10px;
+  padding-bottom: 80px;
 }
 
 .header {
@@ -49,6 +50,7 @@
 }
 
 .native-select-wrapper {
+  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
@@ -114,4 +116,58 @@ button.submit {
 .submit-button:hover,
 button.submit:hover {
   background: #133b5c;
+}
+
+
+
+.cover-photo {
+  margin-top: 20px;
+}
+
+.upload-button {
+  background-color: #6200ea;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.upload-button:hover {
+  background-color: #3700b3;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.cover-preview {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.upload-success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+app-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  padding-bottom: 100px; 
+  overflow-y: auto;
 }
