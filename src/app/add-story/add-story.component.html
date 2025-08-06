@@ -7,7 +7,12 @@
   
   <div class="story-form">
     <p>Story Title</p>
-    <input type="text" placeholder="Enter Title" />
+    <input 
+      type="text" 
+      placeholder="Enter Title" 
+      [(ngModel)]="storyTitle" 
+      name="storyTitle"
+    />
   </div>
   
   <div class="native-select-wrapper">
@@ -20,23 +25,6 @@
 
   <div class="your-story">
     <p>Your Story</p>
-    <!-- <editor
-      apiKey="a1hayr1d50l96cyqtvhnd4ztkiwn34gug0u7c5w2r17bkh38"
-      [(ngModel)]="storyContent"
-      [init]="{
-        height: 300,
-        menubar: true,
-        plugins: [
-          'advlist autolink lists link image charmap preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste help wordcount'
-        ],
-        toolbar:
-          'undo redo | formatselect | bold italic underline | \
-          alignleft aligncenter alignright alignjustify | \
-          bullist numlist outdent indent | removeformat | help | image media'
-      }"
-    ></editor> -->
     <editor
       apiKey="a1hayr1d50l96cyqtvhnd4ztkiwn34gug0u7c5w2r17bkh38"
       [(ngModel)]="storyContent"
@@ -53,29 +41,9 @@
         images_upload_handler: yourImageUploadHandler
       }">
     </editor>
-
-
-
   </div>
-
   
-  
-  
-  <!-- <div class="cover-photo">
-    <p>Cover Photo</p>
-    <label for="coverUpload" class="upload-button">
-      Choose file
-    </label>
-    <input
-      type="file"
-      id="coverUpload"
-      accept="image/*"
-      (change)="onCoverPhotoSelected($event)"
-    />
-  </div> -->
   <div class="cover-photo">
-    <p>Cover Photo</p>
-    
     <!-- Upload Button -->
     <label for="coverUpload" class="upload-button">
       Choose file
@@ -93,9 +61,12 @@
       <img [src]="coverPhotoPreview" alt="Cover Preview" class="preview-img" />
     </div>
   </div>
+
   
-  <button class="submit-button">Submit</button>
+
+  <button class="submit-button" (click)="onSubmit()">Submit</button>
 
 </div>
+  
 
  <app-bottom-nav></app-bottom-nav>
