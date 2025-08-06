@@ -1,130 +1,113 @@
 :host {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: #f5faff; /* soft off-white blue */
-    min-height: 100vh;
-    padding: 4rem 1rem 100px; /* bottom padding to make room for nav */
-    box-sizing: border-box;
-  }
-  
-  .post-container {
-    width: 100%;
-    max-width: 850px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 114, 206, 0.1);
-    padding: 2rem;
-    position: relative;
-  }
-  
-  .top-left-logo {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 50px;
-    height: auto;
-    z-index: 1;
-  }
-  
-  .post-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .post-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #0a2f5c;
-    margin-bottom: 0.25rem;
-  }
-  
-  .post-author {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .post {
-    margin-top: 1.5rem;
-  }
-  
-  .post-content {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: #333;
-    white-space: pre-line;
-  }
-  
-  .content-image {
-    width: 100%;
-    height: auto;
-    margin: 1.5rem 0;
-    border-radius: 12px;
-    border: 1px solid #d0e6f8;
-  }
-  
-  .post-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #e2e2e2;
-    padding-top: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  .like-button {
-    background-color: white;
-    border: 1px solid #0072ce;
-    color: #0072ce;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .like-button:hover {
-    background-color: #e6f1fb;
-  }
-  
-  .like-button.liked {
-    background-color: #0072ce;
-    color: white;
-    border-color: #0072ce;
-  }
-  
-  .date-added {
-    font-style: italic;
-  }
-  
-  .navbar {
-    background-color: #0072ce;
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .nav-button {
-    color: white;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 8px 20px;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .logo {
-    height: 60px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f5faff; /* soft off-white blue */
+  min-height: 100vh;
+  padding: 2rem 1rem 150px; /* Increased bottom padding significantly */
+  box-sizing: border-box;
+}
+
+.post-container {
+  width: 100%;
+  max-width: 1200px; /* Increased from 1000px to 1200px */
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 114, 206, 0.1);
+  padding: 4rem; /* Increased from 3rem to 4rem */
+  position: relative;
+  margin-bottom: 50px; /* Additional margin for extra space */
+}
+
+.logo {
+  height: 80px; /* Increased from 60px to 80px */
+  width: auto;
+  display: block;
+  margin: 0 auto 2.5rem auto; /* Increased margin from 2rem to 2.5rem */
+  object-fit: contain;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem; /* Increased from 1.5rem to 2rem */
+}
+
+.post-title {
+  font-size: 2.5rem; /* Increased from 2rem to 2.5rem */
+  font-weight: 600;
+  color: #0a2f5c;
+  margin-bottom: 0.5rem; /* Increased from 0.25rem to 0.5rem */
+}
+
+.post-author {
+  font-size: 1.2rem; /* Increased from 1rem to 1.2rem */
+  color: #666;
+}
+
+.post {
+  margin-top: 1.5rem;
+}
+
+.post-content {
+  font-size: 1.3rem; /* Increased from 1.1rem to 1.3rem */
+  line-height: 1.9; /* Increased from 1.8 to 1.9 */
+  color: #333;
+  white-space: pre-line;
+  margin-bottom: 2.5rem; /* Increased from 2rem to 2.5rem */
+}
+
+.content-image {
+  width: 100%;
+  max-width: 900px; /* Increased from 700px to 900px */
+  height: auto;
+  margin: 2.5rem auto; /* Increased margin from 2rem to 2.5rem */
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #d0e6f8;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e2e2e2;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.like-button {
+  background-color: white;
+  border: 1px solid #0072ce;
+  color: #0072ce;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.like-button:hover {
+  background-color: #e6f1fb;
+}
+
+.like-button.liked {
+  background-color: #0072ce;
+  color: white;
+  border-color: #0072ce;
+}
+
+.date-added {
+  font-style: italic;
+}
+
+/* Ensure bottom navigation shows properly - override any conflicting styles */
+app-bottom-nav {
+  display: block !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 10000 !important;
+}
