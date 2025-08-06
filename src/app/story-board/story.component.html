@@ -1,0 +1,37 @@
+<div class="post-container">
+    <img src="assets/ficodiarieslogo2.png" class="logo" />
+  
+    <div class="post-header">
+      <h3 class="post-title">{{ title }}</h3>
+      <p class="post-author">{{ author }}</p>
+    </div>
+  
+    <div class="post">
+      <div class="post-content">
+        <p>{{ content }}</p>
+  
+        <img
+          *ngIf="contentImageUrl"
+          [src]="contentImageUrl"
+          class="content-image"
+          alt="Story Image"
+        />
+      </div>
+    </div>
+  
+    <div class="post-footer">
+      <button class="like-button" (click)="toggleLike()">
+        {{ isLiked ? '♥' : '♡' }}
+      </button>
+  
+      <div class="date-added">
+        Date added: <span>{{ postDate | date: 'mediumDate' }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="navbar">
+    <button class="nav-button" (click)="onHomeClick()">Home</button>
+    <button class="nav-button" (click)="onAddStoryClick()">Add Story</button>
+    <button class="nav-button" (click)="onSpaceClick()">Space</button>
+  </div>

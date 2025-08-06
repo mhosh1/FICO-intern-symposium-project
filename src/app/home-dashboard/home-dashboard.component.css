@@ -75,19 +75,33 @@ mat-form-field {
   gap: 2rem;
 }
 
-
 /* Cards */
 .product-card {
   background-color: #ffffff;
   border: 1px solid #d0e6f8;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 114, 206, 0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 114, 206, 0.15);
+}
+
+/* Clickable card styles */
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 114, 206, 0.25);
+  border-color: #0072ce;
+}
+
+.clickable-card:active {
+  transform: translateY(-2px);
 }
 
 .story-image {

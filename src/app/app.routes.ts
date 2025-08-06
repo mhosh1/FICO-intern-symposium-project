@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { BlankPageComponent } from './blank-page/blank-page.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { AddStoryComponent } from './add-story/add-story.component';
+import { StoryComponent } from './story-board/story.component';
 
 export const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -11,6 +12,7 @@ export const routes: Routes = [
   { path: 'blank', component: BlankPageComponent },
   { path: 'home', component: HomeDashboardComponent },
   { path: 'add-story', component: AddStoryComponent },
+  { path: 'story-board', component: StoryComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
 ];
