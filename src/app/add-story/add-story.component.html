@@ -10,12 +10,11 @@
     <input type="text" placeholder="Enter Title" />
   </div>
 
-  <div class="select-team">
-    <mat-form-field appearance="outline">
-      <mat-select [(ngModel)]="selectedTeam" placeholder="Choose Team">
-        <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+  <div class="native-select-wrapper">
+    <select id="teamSelect" [(ngModel)]="selectedTeam" class="team-select">
+      <option value="" disabled selected hidden>Choose Team</option>
+      <option *ngFor="let team of teams" [value]="team">{{ team }}</option>
+    </select>
   </div>
 
   <div class = "your-story">

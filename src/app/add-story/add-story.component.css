@@ -1,10 +1,12 @@
 .container {
-  background-color: #d1e0ee;
-  padding: 100px;
-  max-width: 800px;
+  padding: 4rem 6rem;
+  max-width: 60rem;
   margin: auto;
-  font-family: Arial, sans-serif;
-} 
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f9fbfc;
+  border-radius: 10px;
+}
 
 .header {
   display: flex;
@@ -44,20 +46,23 @@
   box-sizing: border-box;
 }
 
-.select-team {
+.native-select-wrapper {
   margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.select-team mat-form-field {
-  width: 100%;
-}
-
-.select-team ::ng-deep .mat-form-field-outline {
+.team-select {
+  padding: 10px 12px;
+  font-size: 16px;
   border-radius: 8px;
-}
-
-.your-story {
-  margin-top: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  background-position: right 10px center;
+  background-size: 8px 10px;
+  color: #787c7c;
 }
 
 .your-story textarea {
@@ -95,7 +100,7 @@ button.submit {
   width: 100%;
   padding: 16px;
   margin-top: 30px;
-  background: #0a2239;
+  background: #0a6de6;
   color: white;
   font-size: 18px;
   font-weight: bold;
