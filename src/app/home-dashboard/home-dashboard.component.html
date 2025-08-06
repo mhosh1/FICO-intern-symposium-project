@@ -40,7 +40,8 @@
       (click)="onStoryClick(story)">
       <img
         mat-card-image
-        [src]="'assets/images/' + story.image"
+        [src]="story.image.startsWith('data:') ? story.image : 'assets/images/' + story.image"
+
         alt="Story Image"
         class="story-image"
       />

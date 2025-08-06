@@ -38,6 +38,14 @@ export class StoryComponent implements OnInit {
         this.author = `By ${this.creator}`;
       }
       
+      if (params['title']) {
+        this.title = params['title'];
+      }
+
+      if (params['content']) {
+        this.content = params['content'];
+      }
+
       if (params['reviewer']) {
         this.reviewer = params['reviewer'];
       }

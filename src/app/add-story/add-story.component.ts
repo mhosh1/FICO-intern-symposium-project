@@ -9,6 +9,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { BottomNavComponent } from "../bottom-nav/bottom-nav.component";
+
+import { StoryService, Story } from './story.service';
+import { Router } from '@angular/router';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 
@@ -30,6 +33,12 @@ import { EditorModule } from '@tinymce/tinymce-angular';
   styleUrls: ['./add-story.component.css']
 })
 export class AddStoryComponent implements OnInit{
+  
+
+  constructor(
+    private storyService: StoryService,
+    private router: Router
+  ) {}
 
   user = {
     name: 'Abby Steinfest',
@@ -40,11 +49,8 @@ export class AddStoryComponent implements OnInit{
   selectedTeam = '';
   searchTopic = '';
   teams = ['Shell', 'Cybersecurity', 'Event Management', 'Analytic Science'];
-  storyContent: string = '';
-
-
-
-
+  storyContent = '';
+  storyTitle = '';
 
   ngOnInit(): void {
   
@@ -69,10 +75,22 @@ export class AddStoryComponent implements OnInit{
   yourImageUploadHandler = (blobInfo: any, success: (url: string) => void, failure: (err: string) => void) => {
     const base64 = blobInfo.base64();
     const url = 'data:' + blobInfo.blob().type + ';base64,' + base64;
-    success(url); // shows image inline
+    this.coverPhotoPreview = url;
+    success(url);
   };
   
-  
+  onSubmit(): void {
+    const newStory: Story = {
+    image: this.coverPhotoPreview || 'Product_09.jpg',
+    createdBy: this.user.name,
+    reviewedBy: 'Pending',
+    team: this.selectedTeam || this.user.team,
+    title: this.storyTitle || 'Untitled Story',
+    content: this.storyContent || '',
+    };
+    console.log('Cover Photo Preview:', this.coverPhotoPreview);
 
-
+    this.storyService.addStory(newStory);
+    this.router.navigate(['/home']);
+  }
 }

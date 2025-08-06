@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { BottomNavComponent } from '../bottom-nav/bottom-nav.component';
+import { StoryService } from '../add-story/story.service';
 
 interface Story {
   id?: number;
@@ -16,6 +17,8 @@ interface Story {
   createdBy: string;
   reviewedBy: string;
   team: string;
+  title?: string;
+  content?: string;
 }
 
 @Component({
@@ -45,71 +48,14 @@ export class HomeDashboardComponent implements OnInit{
   searchTopic = '';
   teams = ['Shell', 'Cybersecurity', 'Event Management', 'Analytic Science'];
 
-  stories: Story[] = [
-    {
-      id: 1,
-      image: 'Product_01.jpg',
-      createdBy: 'Arin Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 2,
-      image: 'Product_02.jpg',
-      createdBy: 'Brian Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 3,
-      image: 'Product_03.jpg',
-      createdBy: 'Mohamed Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 4,
-      image: 'Product_04.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 5,
-      image: 'Product_05.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 6,
-      image: 'Product_06.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Shell'
-    },
-    {
-      id: 7,
-      image: 'Product_07.jpg',
-      createdBy: 'Ana Stoneberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Event Management'
-    },
-    {
-      id: 8,
-      image: 'Product_08.jpg',
-      createdBy: 'Ana Steinberg',
-      reviewedBy: 'Jeff Service',
-      team: 'Cybersecurity'
-    }
-  ];
+  stories: Story[] = [];
+  filteredStories: Story[] = [];
 
-  filteredStories: Story[] = [...this.stories];
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private storyService: StoryService) {}
 
   ngOnInit(): void {
-    this.filteredStories = this.stories;
+    this.stories = this.storyService.getStories();
+    this.filteredStories = [...this.stories];
   }
 
   filterStories(): void {
@@ -127,7 +73,9 @@ export class HomeDashboardComponent implements OnInit{
       queryParams: { 
         storyId: story.id,
         creator: story.createdBy,
-        image: story.image
+        image: story.image,
+        title: story.title,
+        content: story.content, 
       } 
     });
   }
