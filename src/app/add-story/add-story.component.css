@@ -1,0 +1,117 @@
+.container {
+  padding: 4rem 6rem;
+  max-width: 60rem;
+  max-height: 60rem;;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f9fbfc;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: -18px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.story-form p,
+.your-story p,
+.cover-photo p {
+  font-weight: bold;
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.story-form input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+.native-select-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.team-select {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  background-position: right 10px center;
+  background-size: 8px 10px;
+  color: #787c7c;
+}
+
+.your-story textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical;
+  background: white;
+}
+
+.cover-photo {
+  margin-top: 20px;
+}
+
+.cover-photo label.upload-button {
+  display: inline-block;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.cover-photo input[type="file"] {
+  display: none;
+}
+
+.submit-button,
+button.submit {
+  width: 100%;
+  padding: 16px;
+  margin-top: 30px;
+  background: #0a6de6;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.submit-button:hover,
+button.submit:hover {
+  background: #133b5c;
+}
