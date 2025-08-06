@@ -1,0 +1,117 @@
+
+.blank-page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e4f7fc 0%, #bcd8ec 100%);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .content {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .content h1 {
+    color: #111d27;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .content p {
+    color: #7f8c8d;
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 150px;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  }
+  
+  .btn-secondary {
+    background: #f8f9fa;
+    color: #495057;
+    border: 2px solid #dee2e6;
+  }
+  
+  .btn-secondary:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .blank-page-container {
+      padding: 10px;
+    }
+    
+    .content {
+      padding: 40px 20px;
+    }
+    
+    .content h1 {
+      font-size: 36px;
+    }
+    
+    .content p {
+      font-size: 16px;
+    }
+    
+    .actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 250px;
+    }
+  }

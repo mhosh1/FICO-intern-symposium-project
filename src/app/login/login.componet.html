@@ -1,0 +1,52 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- FICO Logo -->
+    <div class="logo-container">
+      <img src="ficoImage.png" alt="FICO Logo" class="fico-logo">
+    </div>
+
+    <h2>Sign In</h2>
+
+    <!-- Profile Icon (optional) -->
+    <div class="profile-icon-container">
+      <img src="profile.jpg" alt="Profile" class="profile-icon">
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Username -->
+      <div class="form-group">
+        <input 
+          id="username" 
+          type="text" 
+          formControlName="username"
+          placeholder="Username"
+          class="form-control"
+          [class.error]="isFieldInvalid('username')">
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <input 
+          id="password" 
+          type="password" 
+          formControlName="password"
+          placeholder="Password"
+          class="form-control"
+          [class.error]="isFieldInvalid('password')">
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="login-button"
+        [disabled]="loginForm.invalid || isLoading">
+        {{ isLoading ? 'Signing In...' : 'Login' }}
+      </button>
+    </form>
+  </div>
+</div>

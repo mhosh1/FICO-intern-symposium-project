@@ -1,0 +1,135 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <div class="fico-header">
+      <h2>Create Account</h2>
+      <!-- Profile image -->
+      <img src="assets/images/profilecomponent.jpg" alt="Profile Image" style="width: 100px; height: 100px; border-radius: 50%;" />
+      <!-- Company/brand logo -->
+      <img src="assets/images/ficoImage.png" alt="Logo" class="top-left-logo">
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+ 
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+      <!-- First & Last Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="firstName" formControlName="firstName" placeholder="First Name" class="form-control" />
+          <div class="error-message" *ngIf="getFieldError('firstName')">
+            {{ getFieldError('firstName') }}
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="lastName" formControlName="lastName" placeholder="Last Name" class="form-control" />
+          <div class="error-message" *ngIf="getFieldError('lastName')">
+            {{ getFieldError('lastName') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="email" id="email" formControlName="email" placeholder="Email *" class="form-control"
+            [class.error]="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" />
+          <div class="error-message" *ngIf="getFieldError('email')">
+            {{ getFieldError('email') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Username -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="username" formControlName="username" placeholder="Username *" class="form-control"
+            [class.error]="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" />
+          <div class="error-message" *ngIf="getFieldError('username')">
+            {{ getFieldError('username') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="form-row">
+        <div class="form-group">
+          <select id="team" formControlName="team" class="form-control">
+            <option value="" disabled>Select your team</option>
+            <option *ngFor="let t of teams" [value]="t">{{ t }}</option>
+          </select>
+          <div class="error-message" *ngIf="getFieldError('team')">
+            {{ getFieldError('team') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="form-row">
+        <div class="form-group">
+          <select id="role" formControlName="role" class="form-control">
+            <option value="" disabled>Select your role</option>
+            <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+          </select>
+          <div class="error-message" *ngIf="getFieldError('role')">
+            {{ getFieldError('role') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="password" id="password" formControlName="password" placeholder="Password *" class="form-control"
+            [class.error]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" />
+          <div class="error-message" *ngIf="getFieldError('password')">
+            {{ getFieldError('password') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password *"
+            class="form-control" />
+          <div class="error-message" *ngIf="getFieldError('confirmPassword')">
+            {{ getFieldError('confirmPassword') }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div class="form-section">
+        <div class="checkbox-group">
+          <input type="checkbox" id="agreeToTerms" formControlName="agreeToTerms" class="checkbox" />
+          <label for="agreeToTerms" class="checkbox-label">
+            I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> <span class="required">*</span>
+          </label>
+        </div>
+        <div class="error-message" *ngIf="signupForm.get('agreeToTerms')?.invalid && signupForm.get('agreeToTerms')?.touched">
+          You must agree to the terms and conditions.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid || isLoading">
+          <span *ngIf="isLoading" class="loading-spinner"></span>
+          {{ isLoading ? 'SIGNING UP...' : 'SIGN UP' }}
+        </button>
+      </div>
+    </form>
+
+    <!-- Login Link -->
+    <div class="login-link">
+      <p>Already have an account? <a routerLink="/login">Log in here</a></p>
+    </div>
+  </div>
+</div>
