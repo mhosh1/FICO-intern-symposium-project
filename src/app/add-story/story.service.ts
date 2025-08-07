@@ -9,6 +9,7 @@ export interface Story {
   team: string;
   content: string;
   title: string;
+  imageForStory?: string; // Optional property for image used in the story
 }
 
 @Injectable({ providedIn: 'root' })
@@ -22,6 +23,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is Kubernetes?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 2,
@@ -31,6 +33,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is Docker?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 3,
@@ -40,6 +43,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is GRPC?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 4,
@@ -49,6 +53,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is SpringBoot?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 5,
@@ -58,6 +63,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is Angular?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 6,
@@ -67,6 +73,7 @@ export class StoryService {
       team: 'Shell',
       title: 'What is CI/CD?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 7,
@@ -76,6 +83,7 @@ export class StoryService {
       team: 'Event Management',
       title: 'What is Java?',
       content: '',
+      imageForStory: '',
     },
     {
       id: 8,
@@ -85,6 +93,7 @@ export class StoryService {
       team: 'Cybersecurity',
       title: 'What is DevOps?',
       content: '',
+      imageForStory: '',
     }
   ];
 

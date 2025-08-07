@@ -16,7 +16,7 @@ export class StoryComponent implements OnInit {
   @Input() content: string = `Kubernetes is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. It provides a robust framework for orchestrating workloads across a cluster of machines, ensuring high availability and efficient resource utilization. By abstracting underlying infrastructure, Kubernetes simplifies the complexities of managing modern, distributed applications in various environments, including on-premises, public cloud, and hybrid setups.`;
   
   // Initialize with default image
-  contentImageUrl: string = "assets/images/Kubernetes.png";
+  contentImageUrl: string = "";
 
   // Properties to store data from navigation
   creator: string = '';
@@ -50,13 +50,30 @@ export class StoryComponent implements OnInit {
         this.reviewer = params['reviewer'];
       }
       
-      // Always keep the Kubernetes image, ignore the navigation image
-      if (params['image']) {
-        this.storyImage = params['image'];
-        // Keep the default Kubernetes image
-        this.contentImageUrl = "assets/images/Kubernetes.png";
+      const defaultImage = 'assets/images/Kubernetes.png';
+      const imageFromParams = params['image'];
+
+      // Use backup if nothing passed
+      if (!imageFromParams || imageFromParams.trim() === '') {
+        this.storyImage = defaultImage;
+      } 
+      // If it's a base64 string
+      else if (imageFromParams.startsWith('data:')) {
+        this.storyImage = imageFromParams;
+      } 
+      // Otherwise treat as filename and prefix with assets/images/
+      else {
+        this.storyImage = 'assets/images/' + imageFromParams;
       }
-      
+
+// Keep contentImageUrl in sync
+this.contentImageUrl = this.storyImage;
+
+
+
+
+
+
       if (params['team']) {
         this.team = params['team'];
       }

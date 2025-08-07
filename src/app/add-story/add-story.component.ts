@@ -87,6 +87,7 @@ export class AddStoryComponent implements OnInit{
     team: this.selectedTeam || this.user.team,
     title: this.storyTitle || 'Untitled Story',
     content: this.storyContent || '',
+    imageForStory: this.coverPhotoPreview || 'kubernetes.jpg' // Use the cover photo as the story image
     };
     console.log('Cover Photo Preview:', this.coverPhotoPreview);
 
