@@ -16,7 +16,7 @@ export class StoryComponent implements OnInit {
   @Input() content: string = `Kubernetes is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. It provides a robust framework for orchestrating workloads across a cluster of machines, ensuring high availability and efficient resource utilization. By abstracting underlying infrastructure, Kubernetes simplifies the complexities of managing modern, distributed applications in various environments, including on-premises, public cloud, and hybrid setups.`;
   
   // Initialize with default image
-  contentImageUrl: string = "assets/images/Kubernetes.png";
+  contentImageUrl: string = "assets/images/K8's.png";
 
   // Properties to store data from navigation
   creator: string = '';
@@ -38,14 +38,6 @@ export class StoryComponent implements OnInit {
         this.author = `By ${this.creator}`;
       }
       
-      if (params['title']) {
-        this.title = params['title'];
-      }
-
-      if (params['content']) {
-        this.content = params['content'];
-      }
-
       if (params['reviewer']) {
         this.reviewer = params['reviewer'];
       }
@@ -54,7 +46,7 @@ export class StoryComponent implements OnInit {
       if (params['image']) {
         this.storyImage = params['image'];
         // Keep the default Kubernetes image
-        this.contentImageUrl = "assets/images/Kubernetes.png";
+        this.contentImageUrl = "assets/images/K8's.png";
       }
       
       if (params['team']) {
@@ -73,7 +65,7 @@ export class StoryComponent implements OnInit {
     console.error('Image failed to load:', this.contentImageUrl);
     console.error('Error event:', event);
     // Fallback to default image
-    this.contentImageUrl = "assets/images/Kubernetes.png";
+    this.contentImageUrl = "assets/images/K8's.png";
     console.log('Switched to fallback image:', this.contentImageUrl);
   }
 
